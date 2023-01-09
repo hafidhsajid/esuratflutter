@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:simriwinkapp/main.dart';
 import 'package:simriwinkapp/pemohon/form/keteranganbenarkelahiran.dart';
 import 'package:simriwinkapp/pemohon/form/keterangandatabenar.dart';
@@ -14,7 +15,6 @@ import 'package:simriwinkapp/pemohon/form/keteranganpermohonaniumk.dart';
 import 'package:simriwinkapp/pemohon/form/keteranganpernyataantetangga.dart';
 import 'package:simriwinkapp/pemohon/form/keterangansuamiistri.dart';
 import 'package:simriwinkapp/pemohon/form/keterangantidakmampusekolah.dart';
-import 'package:http/http.dart' as http;
 import 'package:simriwinkapp/pemohon/form/keteranganusahadaridesa.dart';
 
 class formpengajuan extends StatefulWidget {
@@ -29,6 +29,8 @@ String dropdownValue = list.first;
 class _formpengajuanState extends State<formpengajuan> {
   @override
   Widget build(BuildContext context) {
+    formtidakvalid() {}
+    ;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Form Pengajuan'),
@@ -124,6 +126,29 @@ class _formpengajuanState extends State<formpengajuan> {
   }
 }
 
+// Future ceknik(String nik) async {
+//   bool found = false;
+//   // var url = Uri.parse('http://desawr9.id' + '/layanan/cek_nik/' + nik);
+//   var url = Uri.parse(env.host + '/layanan/cek_nik/' + nik);
+//   var response = await http.get(
+//     url,
+//   );
+//   try {
+//     var body = jsonDecode(response.body);
+//     if (body['nama'] != null) {
+//       found = true;
+//     }
+
+//     print(body['nama']);
+//   } catch (e) {
+//     print("error");
+//     found = false;
+//     return false;
+//   }
+//   // print(url);
+//   return found;
+// }
+
 List<String> list = <String>[
   'Pilih',
   'Keterangan Domisili',
@@ -140,3 +165,107 @@ List<String> list = <String>[
   'Keterangan Data Benar',
   'Keterangan Kematian Di Rumah',
 ];
+
+List<String> rtlist = <String>[
+  'RT',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  '11',
+  '12',
+  '13',
+  '14',
+  '15',
+  '16',
+  '17',
+  '18',
+  '19',
+  '20',
+  '21',
+  '22',
+  '23',
+  '24',
+  '25',
+  '26',
+  '27',
+  '28',
+  '29',
+  '30',
+  '31',
+  '32',
+  '33',
+  '34',
+  '35',
+];
+List<String> rwlist = <String>[
+  'RW',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+];
+List<String> dusunlist = <String>['Dusun', 'Sumberingin', 'Nongkosongo'];
+
+List<String> warganegaralist = <String>[
+  'Warganegara',
+  'Warga Negara Indonesia',
+  'Warga Negara Asing',
+];
+
+List<String> agamalist = <String>[
+  'Agama',
+  'Islam',
+  'Kristen',
+  'Katholik',
+  'Budha',
+  'Hindu',
+];
+
+List<String> statuskawinlist = <String>[
+  'Status Kawin',
+  'Belum Kawin',
+  'Kawin',
+  'Cerai Hidup',
+  'Cerai Mati'
+];
+
+List<String> jeniskelaminlist = <String>[
+  'Jenis Kelamin',
+  'Laki-Laki',
+  'Perempuan'
+];
+
+Future ceknik(String nik) async {
+  bool found = false;
+  // var url = Uri.parse('http://desawr9.id' + '/layanan/cek_nik/' + nik);
+  var url = Uri.parse(env.host + '/layanan/cek_nik/' + nik);
+  var response = await http.get(
+    url,
+  );
+  try {
+    var body = jsonDecode(response.body);
+    if (body['nama'] != null) {
+      found = true;
+    }
+
+    print(body['nama']);
+  } catch (e) {
+    print("error");
+    found = false;
+    return false;
+  }
+  // print(url);
+  return found;
+}

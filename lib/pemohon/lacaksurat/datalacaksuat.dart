@@ -1,10 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:simriwinkapp/main.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 import 'package:http/http.dart' as http;
+import 'package:simriwinkapp/main.dart';
 
 class datalacaksurat extends StatelessWidget {
   final String data;
@@ -157,7 +155,7 @@ class datalacaksurat extends StatelessWidget {
                                   ),
                                   Row(
                                     children: [
-                                      Text('Nomor Pengajuan : '),
+                                      Text('Nomor Pengajuan  '),
                                       Spacer(),
                                       Text(snapshot.data['message'][index]
                                                   ['NOMOR_AJUAN']
@@ -172,7 +170,8 @@ class datalacaksurat extends StatelessWidget {
                                   ),
                                   Row(
                                     children: [
-                                      Text('Tanggal Pengajuan : '),
+                                      Text('Tanggal Pengajuan  '),
+                                      Spacer(),
                                       Text(snapshot.data['message'][index]
                                                   ['CREATED_AT']
                                               .toString()
@@ -181,6 +180,7 @@ class datalacaksurat extends StatelessWidget {
                                                   ['CREATED_AT']
                                               .toString()
                                           : ''),
+                                      Spacer(),
                                     ],
                                   ),
                                 ],

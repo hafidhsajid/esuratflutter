@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 
 class sentpage extends StatelessWidget {
@@ -16,7 +14,7 @@ class sentpage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var decode = jsonDecode(this.body);
+    // var decode = jsonDecode(this.body);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       // appBar: AppBar(

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:simriwinkapp/pemohon/homepage.dart';
-import 'package:simriwinkapp/petugas/homepagepetugas.dart';
-import 'package:simriwinkapp/petugas/login.dart';
 
 class rolesscreen extends StatelessWidget {
   const rolesscreen({Key? key}) : super(key: key);
@@ -14,7 +12,7 @@ class rolesscreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/icon.png',height: 135),
+            Image.asset('assets/icon.png', height: 135),
             SizedBox(
               height: 30,
             ),
@@ -23,10 +21,9 @@ class rolesscreen extends StatelessWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) {
-                        return homepagepemohon();
-                      }));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return homepagepemohon();
+                  }));
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.white,
@@ -44,7 +41,6 @@ class rolesscreen extends StatelessWidget {
                 ),
               ),
             ),
-
             SizedBox(
               height: 20,
             ),
@@ -53,10 +49,10 @@ class rolesscreen extends StatelessWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) {
-                        return login();
-                      }));
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (context) {
+                  //       return login();
+                  //     }));
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.white,

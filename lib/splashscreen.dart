@@ -1,8 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:simriwinkapp/petugas/login.dart';
-import 'package:simriwinkapp/rolesscreen.dart';
+import 'package:simriwinkapp/pemohon/homepage.dart';
 
 class splashscreen extends StatefulWidget {
   const splashscreen({Key? key}) : super(key: key);
@@ -17,8 +16,8 @@ class _splashscreenState extends State<splashscreen> {
     super.initState();
     Timer(
         Duration(seconds: 5),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => rolesscreen())));
+        () => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => homepagepemohon())));
   }
 
   @override
